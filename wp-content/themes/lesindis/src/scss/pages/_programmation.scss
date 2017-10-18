@@ -1,0 +1,27 @@
+.container {
+	width: 70vw;
+	margin: 0 auto;
+}
+// #SECTION
+.section {
+	margin-bottom: 30vh;
+}
+.section__sur-title {
+	margin-bottom: 5vh;
+	text-align: center;
+}
+.section__title--big {
+	
+}
+.section__liste {
+	margin: 0 auto;
+	text-align: center;
+	.section__liste__item {
+		display: inline-block;
+		margin-top: 3px;
+		&:after {
+			content: ' /';
+		}
+	}
+}
+

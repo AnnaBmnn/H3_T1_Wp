@@ -1,1 +1,28 @@
-// All var for scss 
+// All var for scss
+
+//COLORS
+$yellow: #F1D570;
+$red: #B33C47;
+$blue: #002C69;
+
+//FONTS
+$avenir: 'Avenir Next';
+$sf: 'SF Display';
+$brandon_black: 'Brandon Grotesque Black';
+$brandon_bold: 'Brandon Grotesque Bold';
+
+.test-1 {
+	font-family: $avenir;
+}
+
+.test-2 {
+	font-family: $sf;
+}
+
+.test-3 {
+	font-family: $brandon_bold;
+}
+
+.test-4 {
+	font-family: $brandon_black;
+}

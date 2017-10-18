@@ -2,7 +2,7 @@
 get_header(); //appel du template header.php  ?>
 
 <div id="content">
-    <h1>Contenu Principal</h1>
+    <h1>LOL</h1>
     <?php
     // boucle WordPress
     if (have_posts()){
