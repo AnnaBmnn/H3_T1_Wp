@@ -35,18 +35,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.test-1 {
-  font-family: "Avenir Next"; }
-
-.test-2 {
-  font-family: "SF Display"; }
-
-.test-3 {
-  font-family: "Brandon Grotesque Bold"; }
-
-.test-4 {
-  font-family: "Brandon Grotesque Black"; }
-
 @font-face {
   font-family: "Avenir Next";
   src: url("../fonts/Avenir-Next.ttc?") format("ttc"); }
@@ -63,6 +51,9 @@ table {
   font-family: "Brandon Grotesque Black";
   src: url("../fonts/Brandon_blk.otf?") format("TrueType"); }
 
+.clear-both {
+  clear: both; }
+
 .container {
   width: 70vw;
   margin: 0 auto; }
@@ -72,13 +63,159 @@ table {
 
 .section__sur-title {
   margin-bottom: 5vh;
-  text-align: center; }
+  text-align: center;
+  font-family: "SF Display";
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #B33C47; }
 
-.section__liste {
+.section-top-progra {
+  color: #F1D570;
+  text-transform: uppercase; }
+
+.section__title--big {
+  font-family: "Brandon Grotesque Black";
+  font-size: 140px; }
+
+.section__title--left {
+  width: 30vw;
+  text-align: right; }
+
+.section__title--right {
+  text-align: right; }
+
+.section__date--big {
+  font-family: "Brandon Grotesque Bold";
+  font-size: 50px;
+  color: #F1D570;
+  letter-spacing: -2px; }
+
+.section__liste-artiste {
   margin: 0 auto;
   text-align: center; }
-  .section__liste .section__liste__item {
-    display: inline-block;
-    margin-top: 3px; }
-    .section__liste .section__liste__item:after {
-      content: ' /'; }
+
+.section__liste-artisteItem {
+  display: inline-block;
+  margin-top: 5px;
+  font-family: "SF Display";
+  font-size: 28px;
+  -webkit-transition: all 0.6s cubic-bezier(0, 0, 0.25, 1);
+  transition: all 0.6s cubic-bezier(0, 0, 0.25, 1);
+  cursor: pointer; }
+  .section__liste-artisteItem:hover {
+    color: #F1D570; }
+  .section__liste-artisteItem:last-child:after {
+    content: ''; }
+  .section__liste-artisteItem:after {
+    content: ' /'; }
+
+.section-date__partie {
+  width: 35vw; }
+
+.section-date__partie--left {
+  text-align: right;
+  margin-bottom: 15vh; }
+  .section-date__partie--left .section__title--medium {
+    text-align: left; }
+  .section-date__partie--left .artiste__date {
+    right: -20%; }
+
+.section-date__partie--right {
+  float: right;
+  text-align: left; }
+  .section-date__partie--right .section__title--medium {
+    text-align: right; }
+  .section-date__partie--right .artiste__date {
+    left: -20%; }
+
+.section__title--medium {
+  font-family: "SF Display";
+  font-size: 82px;
+  text-transform: uppercase;
+  color: #002C69; }
+
+.section__date--medium {
+  margin-bottom: 5vh;
+  font-family: "SF Display";
+  font-size: 36px;
+  color: #002C69;
+  letter-spacing: -1.6px; }
+
+.artiste {
+  margin-bottom: 5vh;
+  position: relative;
+  cursor: pointer; }
+  .artiste:hover .artiste__name {
+    color: #002C69;
+    position: relative; }
+    .artiste:hover .artiste__name:after {
+      -webkit-transform: scaleX(1);
+              transform: scaleX(1); }
+  .artiste .artiste__name:after {
+    content: '';
+    background: #002C69;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 10%;
+    height: 2px;
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transition: -webkit-transform 0.2s ease-in;
+    transition: -webkit-transform 0.2s ease-in;
+    transition: transform 0.2s ease-in;
+    transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in; }
+
+.artiste__name {
+  font-family: "Avenir Next";
+  font-size: 24px;
+  margin-bottom: 1vh; }
+
+.artiste__infos {
+  font-family: "Avenir Next";
+  font-size: 15px; }
+
+.artiste__date {
+  font-family: "Avenir Next";
+  font-size: 12px;
+  position: absolute;
+  top: 0; }
+
+.artiste__picture {
+  float: right;
+  margin-right: 10vw;
+  max-width: 15vw;
+  height: auto; }
+  .artiste__picture img {
+    width: 100%;
+    height: 100%; }
+
+.agenda {
+  width: 65vw;
+  height: 100px;
+  float: left;
+  margin-bottom: 3vh; }
+
+.agenda ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.agenda__day {
+  font-family: "SF Display";
+  font-size: 22px;
+  cursor: pointer; }
+
+.agenda__day--active {
+  color: #002C69; }
