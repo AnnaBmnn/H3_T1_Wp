@@ -1,6 +1,21 @@
-// .content-programmation {
-// 	background-image: url('../img/bg_progra.svg');
-// }
+.content-programmation {
+	background-image: url('../img/bg_progra.svg');
+    background-size: 85% auto;
+    background-position: 0 10vh;
+    background-repeat: no-repeat;
+    @media only screen and (max-width:900px){
+        background-size: 100% auto; 
+    }
+    // position: relative;
+    // &:after {
+    //     content: url('../img/bg_progra.svg');
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100vw;
+    //     height: auto;
+    // }
+}
 .container {
     width: $container;
     margin: 0 auto;
@@ -25,19 +40,37 @@
 .section__title--big {
     font-family: $brandon_black;
     font-size: 140px;
+    @media only screen and (max-width:800px){
+        font-size: 90px;
+    }
+    @media only screen and (max-width:500px){
+        font-size: 60px;
+    }
+    span {
+        width: 30vw;
+        text-align: right;
+        display: block;
+        &:nth-of-type(3) {
+            text-align: right;
+            width: auto;
+        }
+    }
 }
-.section__title--left {
-    width: 30vw;
-    text-align: right;
-}
-.section__title--right {
-    text-align: right;
-}
+// .section__title--left {
+
+// }
+// .section__title--right {
+//     text-align: right;
+// }
 .section__date--big {
+    text-align: right;
     font-family: $brandon_bold;
     font-size: 50px;
     color: $yellow;
     letter-spacing: -2px;
+    @media only screen and (max-width:500px){
+        font-size: 40px;
+    }
 }
 
 // #SECTION-ARTISTE
@@ -62,7 +95,7 @@
         }
     }
     &:after {
-        content: ' /';
+        content: ' / ';
     }
 }
 // #SECTION-DATE
@@ -82,9 +115,6 @@
 .section-date__partie--right {
     float: right;
     text-align: left;
-    .section__title--medium {
-        text-align: right;
-    }
 	.artiste__date {
         left: -20%;
     }
@@ -112,8 +142,8 @@
 
     &:hover {
         .artiste__name {
+            display: inline-block;
             color: $blue;
-            position: relative;
 
             &:after {
                 transform: scaleX(1);
@@ -121,13 +151,16 @@
         }
     }
     .artiste__name {
+        display: inline-block;
+        position: relative;
+
         &:after {
             content: '';
             background: $blue;
             position: absolute;
             top: 100%;
             left: 0;
-            width: 10%;
+            width: 20px;
             height: 2px;
             transform-origin: left;
             transform: scaleX(0);

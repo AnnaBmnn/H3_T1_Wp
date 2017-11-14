@@ -54,6 +54,15 @@ table {
 .clear-both {
   clear: both; }
 
+.content-programmation {
+  background-image: url("../img/bg_progra.svg");
+  background-size: 85% auto;
+  background-position: 0 10vh;
+  background-repeat: no-repeat; }
+  @media only screen and (max-width: 900px) {
+    .content-programmation {
+      background-size: 100% auto; } }
+
 .container {
   width: 70vw;
   margin: 0 auto; }
@@ -76,19 +85,29 @@ table {
 .section__title--big {
   font-family: "Brandon Grotesque Black";
   font-size: 140px; }
-
-.section__title--left {
-  width: 30vw;
-  text-align: right; }
-
-.section__title--right {
-  text-align: right; }
+  @media only screen and (max-width: 800px) {
+    .section__title--big {
+      font-size: 90px; } }
+  @media only screen and (max-width: 500px) {
+    .section__title--big {
+      font-size: 60px; } }
+  .section__title--big span {
+    width: 30vw;
+    text-align: right;
+    display: block; }
+    .section__title--big span:nth-of-type(3) {
+      text-align: right;
+      width: auto; }
 
 .section__date--big {
+  text-align: right;
   font-family: "Brandon Grotesque Bold";
   font-size: 50px;
   color: #F1D570;
   letter-spacing: -2px; }
+  @media only screen and (max-width: 500px) {
+    .section__date--big {
+      font-size: 40px; } }
 
 .section__liste-artiste {
   margin: 0 auto;
@@ -107,7 +126,7 @@ table {
   .section__liste-artisteItem:last-child:after {
     content: ''; }
   .section__liste-artisteItem:after {
-    content: ' /'; }
+    content: ' / '; }
 
 .section-date__partie {
   width: 35vw; }
@@ -123,8 +142,6 @@ table {
 .section-date__partie--right {
   float: right;
   text-align: left; }
-  .section-date__partie--right .section__title--medium {
-    text-align: right; }
   .section-date__partie--right .artiste__date {
     left: -20%; }
 
@@ -146,27 +163,30 @@ table {
   position: relative;
   cursor: pointer; }
   .artiste:hover .artiste__name {
-    color: #002C69;
-    position: relative; }
+    display: inline-block;
+    color: #002C69; }
     .artiste:hover .artiste__name:after {
       -webkit-transform: scaleX(1);
               transform: scaleX(1); }
-  .artiste .artiste__name:after {
-    content: '';
-    background: #002C69;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 10%;
-    height: 2px;
-    -webkit-transform-origin: left;
-            transform-origin: left;
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-    -webkit-transition: -webkit-transform 0.2s ease-in;
-    transition: -webkit-transform 0.2s ease-in;
-    transition: transform 0.2s ease-in;
-    transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in; }
+  .artiste .artiste__name {
+    display: inline-block;
+    position: relative; }
+    .artiste .artiste__name:after {
+      content: '';
+      background: #002C69;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 20px;
+      height: 2px;
+      -webkit-transform-origin: left;
+              transform-origin: left;
+      -webkit-transform: scaleX(0);
+              transform: scaleX(0);
+      -webkit-transition: -webkit-transform 0.2s ease-in;
+      transition: -webkit-transform 0.2s ease-in;
+      transition: transform 0.2s ease-in;
+      transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in; }
 
 .artiste__name {
   font-family: "Avenir Next";

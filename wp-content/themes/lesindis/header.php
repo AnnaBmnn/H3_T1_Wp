@@ -5,6 +5,7 @@
 
         <!-- Appel du fichier style.css de notre thème -->
         <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 
         <!--
             Tout le contenu de la partie head de mon site

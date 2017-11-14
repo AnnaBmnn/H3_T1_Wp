@@ -45,16 +45,6 @@ function ajout_custom_type_artiste() {
           'rewrite' => array( 'slug' => 'genre' ),
           'hierarchical' => true,
       	);
-	    register_taxonomy( $taxonomy, $object_type, $args);
-
-	    $taxonomy = "lieu";
-	    $object_type = array("artiste");
-	    $args = array(
-          'label' => __( 'Lieu' ),
-          'rewrite' => array( 'slug' => 'lieu' ),
-          'hierarchical' => false,
-      	);
-	    register_taxonomy( $taxonomy, $object_type, $args);
 
 }
 
