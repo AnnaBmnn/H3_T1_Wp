@@ -30,7 +30,8 @@ function ajout_custom_type_lieu() {
 	        'show_in_nav_menus'   => true,
 	        'publicly_queryable'  => true,
 	        'exclude_from_search' => false,
-	        'has_archive'         => false,
+	        'has_archive'         => true,
+	        'archive_slug'        => $post_type,
 	        'query_var'           => true,
 	        'can_export'          => true,
 	        'rewrite'             => array( 'slug' => $post_type )

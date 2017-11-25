@@ -6,6 +6,12 @@ function ajout_scripts() {
 wp_register_script('main_script', JS_URL . '/main.js', array('jquery'),'1.1', true);
 wp_enqueue_script('main_script');
 
+wp_register_script('integration_script', JS_URL . '/integration.js', array('jquery'),'1.1', true);
+wp_enqueue_script('integration_script');
+
+wp_register_script('home_script', JS_URL . '/homeScroll.js', array('jquery'),'1.1', true);
+wp_enqueue_script('home_script');
+
 // pass Ajax Url to script.js
 wp_localize_script('main_script', 'ajaxurl', admin_url( 'admin-ajax.php' ) );
 

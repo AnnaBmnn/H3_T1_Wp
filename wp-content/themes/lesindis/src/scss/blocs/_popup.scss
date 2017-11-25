@@ -1,0 +1,395 @@
+body {
+	margin: 0;
+    padding: 0;
+    width: 100vw; 
+}
+
+/*
+* NAVBAR
+*/
+
+nav {
+	width: 100vw;
+	height: 10vh;
+
+	ul {
+		width: 50%;
+		margin: auto;
+		padding: 0;
+		display: flex;
+		flex-direction: row;
+		list-style: none;
+		justify-content: space-between;
+        align-items: center;
+        
+        @include medium {
+            
+            width: 70%;
+        }
+
+		li {
+
+			a {
+				position: relative;
+				text-decoration: none;
+				// font-family: LATO
+				color: black;
+				text-transform: uppercase;
+				font-size: 14px;
+				transition: all 0.3s ease;
+
+				&:after {
+					content: '';
+					position: absolute;
+					width: 0%;
+					height: 3px;
+					background-color: #122966;
+					left: 0;
+					bottom: -5px;
+					transition: all 0.3s ease;
+				}
+
+				&:hover {
+					color: #122966;
+				}
+				&:hover::after {
+					width: 100%;
+				}
+
+			}
+
+			&:nth-child(3) a {
+				font-size: 24px;
+
+				&::after {
+					display: none;
+				}
+			}
+		}
+
+    }
+    
+    @include small {
+        display: none;
+    }
+
+}
+
+/*
+* EDITO
+*/
+
+.edito {
+    position: relative;
+	width: 100vw;
+    height: 100vh;
+}
+
+.edito__description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    z-index: 2;
+    font-size: 18px;
+}
+
+.edito__title {
+    position: absolute;
+    left: 20%;
+    z-index: 3;
+    font-size: 120px;
+    margin-top: 90px;
+    text-transform: uppercase;
+    color: #122966;
+
+    @include medium {
+        left: 12%;
+    }
+
+    @include small {
+        position: static;
+        margin: 10px 0px 10px 0px;
+        font-size: 50px;
+        width: 100vw;
+        text-align: center;
+    }
+}
+
+.edito__text {
+    position: absolute;
+    left: 20%;
+    top: 140px;
+    width: 20%;
+    height:auto;
+    letter-spacing: 1px;
+    line-height:25px;
+    padding: 85px;
+    background: white;
+    z-index: 2;
+    font-size: 18px;
+
+    strong {
+        font-size: 20px; 
+    }
+
+    @include small {
+        position: static;
+        padding: 25px;
+        margin: auto;
+        width: 80%;
+        letter-spacing: 1px;
+        line-height: 23px;
+        background: white;
+        z-index: 2;
+        font-size: 12px;
+    }
+
+    @include medium {
+        width: 24%;
+        left: 10%;
+    }
+}
+
+.edito__background {
+    position: absolute;
+    right: 20%;
+    z-index: 1;
+
+    img {
+        @include small {
+            width: 100%;
+        }
+    }
+
+    @include small {
+        width: 100vw;
+        position: static;
+
+    }
+
+    @include medium {
+        right: 15%;
+    }
+    
+}
+
+/*
+* POP-UP
+*/
+
+.pop-up {
+    position: absolute;
+    z-index: 1000;
+    left: 0%;
+    top: 0;
+    width: 0%;
+    min-height: 100%;
+    background: #F5F5F8;
+    transition: all 0.5s ease;
+    .opacity-in {
+        opacity: 0;
+        padding-left: 100px;
+        padding-top: 50px;
+        color: #122966;
+        margin-top: 50px;
+        .close {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+        h2 {
+            position: relative;
+            display: inline-block;
+            letter-spacing: 1px;
+            font-size: 50px;
+            color: #122966;
+            z-index: 10;
+            margin-top: 10px;
+            text-transform: uppercase;
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                width: 100%;
+                height: 100%;
+                background: #122966;
+                transform-origin: right;
+            }
+
+            @include small {
+                position: static;
+                width: 100%;
+                text-align: center;
+            }
+
+            @include s-small {
+                font-size: 25px;
+            }
+        }
+        .artist-img {
+            position: absolute;
+            z-index: 0;
+            top: 18%;
+            left: 10%;
+            .overlay-fade {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                background: #FCFCFC;
+                transform-origin: right;
+                @include small {
+                    display: none;
+                }
+            }
+            img {
+                z-index: 0;
+                width: 100%;
+                height: auto;
+
+            }
+
+            @include small {
+                position: static;
+                text-align: center;
+                width: 50%;
+                margin: auto;
+            }
+        }
+        .infos {
+            position: relative;
+            left: 25%;
+            padding-left: 5px;
+
+            .sub-infos {
+                @include small {
+                    line-height: 25px;                
+                }
+            }
+            .shop-button {
+                border: solid 1px #122966;
+                padding: 5px 10px;
+                transition: all 0.3s ease;
+                color: #122966;
+                background: white;
+                cursor: pointer;
+                letter-spacing: 0.5px;
+                &:hover {
+                    color: white;
+                    background: #122966;
+                }
+
+                @include small {
+                    margin: 15px 0px;
+                }
+            }
+            .description {
+                position: relative;
+                width: 450px;
+                margin-left: -5%;
+                font-size: 18px;
+
+                @include small {
+                    width: 100%;
+                    margin: 25px 0px 25px 0px;
+                }
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0%;
+                right: 55%;
+                width: 50%;
+                height: 100%;
+                background: #122966;
+                transform-origin: right;
+                @include small {
+                    display: none;
+                }
+            }
+
+            @include medium {
+                padding-left: 25px;
+            }
+
+            @include small {
+                position: static;
+                margin: auto;
+                width: 50%;
+                padding: 0;
+            }
+
+            @include s-small {
+
+                width: 90%;
+                margin-top: 20px;
+            }
+
+        }
+
+        @include small {
+            padding: 10px;
+        }
+
+        @include s-small {
+            margin-top: 20px;
+        }
+    }
+}
+
+button {
+    position: absolute;
+    right: 0;
+    top: 50px;
+
+    @include small {
+        z-index: 10001;
+    }
+}
+
+.show {
+    width: 70%;
+    min-height: 100%;
+
+    @include small {
+        width: 80%;
+        height: 100%;
+    }
+
+    @include s-small {
+        width: 90%;
+        height: 100%;
+    }
+}
+
+.opacity-out {
+    transition: all 0.2s ease;
+    opacity: 1 !important;
+}
+
+.slide-title:after {
+    animation: fade 0.6s 0.2s cubic-bezier(0.81, -0.01, 0.21, 0.93) forwards;
+}
+
+.slide-img {
+    animation: fade 0.6s 0.25s cubic-bezier(0.81, -0.01, 0.21, 0.93) forwards;
+}
+
+.slide-infos:after {
+    animation: fade 0.6s 0.30s cubic-bezier(0.81, -0.01, 0.21, 0.93) forwards;
+}
+
+@keyframes fade {
+    0% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(0);
+    }
+}
+
+iframe {
+	margin: 3% 20% 0% 20%;
+}

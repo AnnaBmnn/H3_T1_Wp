@@ -1,0 +1,66 @@
+nav.menu {
+	width: 100vw;
+	height: 10vh;
+
+	ul {
+		width: 50%;
+		margin: auto;
+		padding: 0;
+		display: flex;
+		flex-direction: row;
+		list-style: none;
+		justify-content: space-between;
+        align-items: center;
+        
+        @include medium {
+            
+            width: 70%;
+        }
+
+		li {
+
+			a {
+				position: relative;
+				text-decoration: none;
+				// font-family: LATO
+				color: black;
+				text-transform: uppercase;
+				font-size: 14px;
+				transition: all 0.3s ease;
+
+				&:after {
+					content: '';
+					position: absolute;
+					width: 0%;
+					height: 3px;
+					background-color: #122966;
+					left: 0;
+					bottom: -5px;
+					transition: all 0.3s ease;
+				}
+
+				&:hover {
+					color: #122966;
+				}
+				&:hover::after {
+					width: 100%;
+				}
+
+			}
+
+			&:nth-child(3) a {
+				font-size: 24px;
+
+				&::after {
+					display: none;
+				}
+			}
+		}
+
+    }
+    
+    @include small {
+        display: none;
+    }
+
+}

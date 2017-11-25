@@ -16,5 +16,13 @@
     </head>
     <body <?php body_class(); ?>>
         <header id="header">
-        <!-- Tout le contenu de l entête de mon site -->
+            <nav class="menu">
+                <ul>
+                    <li><a href="#">Programmation</a></li>
+                    <li><a href="#">Lieux</a></li>
+                    <li><a href="#">Les indisciplinées</a></li>
+                    <li><a href="#">Infos pratique</a></li>
+                    <li><a href="#"></a>Le festival</li>
+                </ul>
+            </nav>
         </header>

@@ -1,4 +1,7 @@
 <?php
+/*
+Template Name: programmation
+*/
 get_header(); //appel du template header.php 
 ?>
 
@@ -13,7 +16,6 @@ get_header(); //appel du template header.php
                         <?php the_field('duree_festival'); ?>
                     </div>
             </div>
-
         </section>
         <section class="section">
             <h2 class="section__sur-title">
@@ -36,13 +38,12 @@ get_header(); //appel du template header.php
                             }
                         ?>
                         </ul>
-
-                <?php
-                    /* Restore original Post Data */
-                    wp_reset_postdata();
-                    endif;
-                ?>
-            </div>
+                    </div>
+            <?php
+                /* Restore original Post Data */
+                wp_reset_postdata();
+                endif;
+            ?>
         </section>
         <!-- SECTION DATE -->
         <section class="section section-date">
@@ -77,12 +78,14 @@ get_header(); //appel du template header.php
                 <div class="section__title--medium">
                     Concert
                 </div>
-                <div class="section__date--medium">Du 4 au 12 nov.</div>
+                <div class="section__date--medium">
+                    Du 4 au 12 nov.
+                </div>
             </div>
-            <?php
-                $terms = get_terms( 'date', 'orderby=name&hide_empty=0' );
-                if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
-                    echo '<div class="agenda">';
+            <div class="agenda">
+                <?php
+                    $terms = get_terms( 'date', 'orderby=name&hide_empty=0' );
+                    if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
                         echo '<ul>';
                         foreach ( $terms as $term ) {
                             //convertit la date du back office au format JOUR DATE (ex Mardi 9)
@@ -94,29 +97,24 @@ get_header(); //appel du template header.php
                                 echo '<div class="agenda__dayNumber" >' . $date_array[1] . '</div>';
                             echo '</li>';
                         }
-                    echo '</div>';
-                }
-                /* Restore original Post Data */
-                wp_reset_postdata();
-            ?>
+                        echo '</ul>';
+                    }
+                    /* Restore original Post Data */
+                    wp_reset_postdata();
+                ?>
+            </div>
             <div id="ajax-artiste-by-date" class="section-date__partie--right section-date__partie">   
                 
             </div>
             <div class="section-date__partie--right section-date__partie">
                 <div class="artiste__picture">
                     <img src="https://img.20mn.fr/4XYkpJZNQyCzRK4bGFs_6A/1200x768_chat-illustration" alt="">
+
                 </div>
             </div>
             <div class="clear-both"></div>
-            
         </section>
         <div class="clear-both"></div>
-
-        <section class="section section-lieu">
-            <h2 class="section__sur-title">
-                Lieu
-            </h2>
-        </section>
     </div>
 </div> <!-- /content -->
 
