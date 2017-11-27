@@ -11,7 +11,7 @@ get_header(); //appel du template header.php  ?>
         </p>
     </div>
     <div class="edito__background">
-        <img src="img/illu.png" alt="">
+        <img src="<?php echo IMAGES_URL ?>/illustration.png" alt="">
     </div>
 </section>
 

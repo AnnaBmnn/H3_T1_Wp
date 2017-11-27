@@ -161,9 +161,10 @@
 }
 // //artiste
 .section-date__partie--right{
+    position: relative;
+
     .artiste {
         margin-bottom: 5vh;
-        position: relative;
         cursor: pointer;
 
         &:hover {
@@ -174,6 +175,9 @@
                 &:after {
                     transform: scaleX(1);
                 }
+            }
+            .artiste__picture {
+                display: block;
             }
         }
         .artiste__name {
@@ -212,10 +216,12 @@
         top: 5px;
     }
     .artiste__picture {
-        float: right;
-        margin-right: 10vw;
-        max-width: 15vw;
+        position: absolute;
+        top: 0;
+        left: -40vw;
+        max-width: 30vw;
         height: auto;
+        display: none;
 
     	img {
             width: 100%;

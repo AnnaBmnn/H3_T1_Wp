@@ -1,6 +1,7 @@
 nav.menu {
 	width: 100vw;
 	height: 10vh;
+	font-family: $lato;
 
 	ul {
 		width: 50%;
@@ -43,7 +44,7 @@ nav.menu {
 					color: #122966;
 				}
 				&:hover::after {
-					width: 100%;
+					width: 15px;
 				}
 
 			}

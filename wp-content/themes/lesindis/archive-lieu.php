@@ -1,143 +1,130 @@
 <?php
 get_header(); //appel du template header.php  ?>
-<!-- <?php
-    echo 'TA MEREEEEEE';
+<?php // SYNTAXE : wp_nav_menu( array $args = array() )
+    $args=array(
+        'theme_location' => 'lieu_menu', // nom du slug
+        'menu' => 'lieu_menu', // nom à donner cette occurence du menu
+        'container' => 'div',
+        'container_class' => 'nav-lieu',
+    );
+    wp_nav_menu($args);
+?> 
+<div class="container--lieu">
+
+<?php
     // boucle WordPress
     if (have_posts()){
         while (have_posts()){
             the_post();
+            $post = get_post();
+            $lieu_ID = $post->ID;
     ?>
-            <h1><?php the_title(); ?></h1>
+    <div id="<?php echo $post->post_name; ?>" class="section section-lieu">
+        <h2 class="section__title--medium">
+            <?php the_title(); ?>
+        </h2>
+        <div class="lieu">
+            <?php if( get_field('photo') ): ?>
+                <div class="lieu__img">
+                    <img src="<?php $photo = get_field('photo'); 
+                            echo $photo['url']; 
+                    ?>" alt="">
+                </div>
+            <?php endif; ?>        
 
-            <p><?php get_field('adresse'); ?></p>
-    <?php
+            <div class="lieu__infos">
+                <h3 class="lieu__infosTitre"><?php the_title(); ?></h3>
+                <?php if( get_field('adresse') ): ?>
+                    <span class="lieu__infosAdresse"><?php the_field('adresse'); ?></span>
+                <?php endif; ?>
+                <?php if( get_field('ville') ): ?>
+                    <span class="lieu__infosAdresse"><?php the_field('ville'); ?></span>
+                <?php endif; ?>
+                <?php if( get_field('ville') ): ?>
+                    <a href="<?php the_field('site'); ?>" class="lieu__infosLink">Voir le site</a>
+                <?php endif; ?>
+            </div>
+            <div class="lieu__description">
+                <?php the_content(); ?>
+            </div>
+        </div>
+        <div class="lieu__artistes">
+            <?php
+                $args = array(
+                    'post_type' => 'artiste',
+                    'order' => 'ASC',
+                    'meta_key'   => 'date',
+                    'orderby'    => 'meta_value_num',
+                    'meta_query'    => array(
+                        'relation'      => 'AND',
+                        array(
+                            'key'       => 'lieu',
+                            'value'     => '"'. get_the_ID(). '"',
+                            'compare'   => 'LIKE',
+                        ),
+                    )
+                );
+                // the query
+                $the_query = new WP_Query( $args ); ?>
+
+                <?php if ( $the_query->have_posts() ) : ?>
+                 
+                    <!-- pagination here -->
+                 
+                    <!-- the loop -->
+                    <?php $dategroup = 'debut'; ?>
+                    <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                        <?php $postdate = get_field('date'); ?> 
+                        <?php if ( $postdate !== $dategroup ) {
+                            if($dategroup == 'debut'){
+
+                            }else {
+                                    echo '</div>';
+                                echo '</div>';                                
+                            }
+                            $dategroup = $postdate;
+                            echo '<div class="artiste__journee">';
+                                echo '<div class="artiste__date">';
+                                    echo $postdate;
+                                echo '</div>';
+                                echo '<div class="artiste__memeJournee">';
+                        }
+                                    echo '<div class="artiste">';
+                                        echo '<div class="artiste__name" data-artisteID="'.get_the_ID().'">';
+                                        the_title();
+                                        echo '</div>';
+                                    echo '</div>';
+                        ?>
+<!--                         <?php $lieu = get_field_object('lieu'); ?> 
+                        <?php var_dump($lieu['value'][0]->post_title); ?>  -->
+                    <?php endwhile; ?>
+                    </div>
+                    </div>
+                    <!-- end of the loop -->
+                 
+                    <!-- pagination here -->
+                 
+                    <!--  -->
+                 
+                <?php else : ?>
+                    <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+            <?php wp_reset_postdata(); ?>
+
+            <?php endif; ?>
+        </div>
+    </div>
+    <div class="pop-up">
+        <div class="opacity-in" id="popup">
+        </div>
+    </div>   
+<?php
     }
     }
     else {
     ?>
-    Nous n'avons pas trouvé d'article répondant à votre recherche
+    </div>
+    
     <?php
     }
-?> -->
-<div class="nav-lieu">
-    <ul>
-        <li class="active">LKoukouieu</li>
-        <li>Lieu</li>
-        <li>Echonova</li>
-        <li>Lieu</li>
-        <li>Flop</li>
-        <li>Le manege</li>
-        <li>Lieu</li>
-        <li>Youkey</li>
-    </ul>
-</div>
-<div class="container--lieu">
-    <div class="section section-lieu">
-        <h2 class="section__title--medium">
-            La manège
-        </h2>
-        <div class="lieu">
-            <div class="lieu__img">
-                <img src="https://img.20mn.fr/4XYkpJZNQyCzRK4bGFs_6A/1200x768_chat-illustration" alt="">
-            </div>
-            <div class="lieu__infos">
-                <h3 class="lieu__infosTitre">Le manège</h3>
-                <span class="lieu__infosAdresse">10 rue colbert</span>
-                <span class="lieu__infosAdresse">56100 Lorient</span>
-                <a href="#" class="lieu__infosLink">Voir sur google</a>
-            </div>
-            <div class="lieu__description">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus facilis necessitatibus reprehenderit, debitis, dolores magni officiis. Minus dolor facere nisi. Architecto sit provident eum quae maxime laboriosam eius, aut blanditiis.
-            </div>
-        </div>
-        <div class="lieu__artistes">
-            <div class="artiste__journees">
-                <div class="artiste__date">
-                        3 decembre
-                </div>
-                <div class="artiste__memeJournee">
-                    <div class="artiste">
-                        <div class="artiste__name">HeyHeyHeyHeyHey</div>
-                    </div>
-                    <div class="artiste">
-                        <div class="artiste__name">YOOULOU</div>
-                    </div>
-                    <div class="artiste">
-                        <div class="artiste__name">Blop</div>
-                    </div>
-                </div>
-            </div>
-            <div class="artiste__journee">
-                <div class="artiste__date">
-                        3 decembre
-                </div>
-                <div class="artiste__memeJournee">
-                    <div class="artiste">
-                        <div class="artiste__name">Koiujj</div>
-                    </div>
-                    <div class="artiste">
-                        <div class="artiste__name">lorednndndn</div>
-                    </div>
-                    <div class="artiste">
-                        <div class="artiste__name">Hey</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="section section-lieu">
-        <h2 class="section__title--medium">
-            La manège
-        </h2>
-        <div class="lieu">
-            <div class="lieu__img">
-                <img src="https://img.20mn.fr/4XYkpJZNQyCzRK4bGFs_6A/1200x768_chat-illustration" alt="">
-            </div>
-            <div class="lieu__infos">
-                <h3 class="lieu__infosTitre">Le manège</h3>
-                <span class="lieu__infosAdresse">10 rue colbert</span>
-                <span class="lieu__infosAdresse">56100 Lorient</span>
-                <a href="#" class="lieu__infosLink">Voir sur google</a>
-            </div>
-            <div class="lieu__description">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus facilis necessitatibus reprehenderit, debitis, dolores magni officiis. Minus dolor facere nisi. Architecto sit provident eum quae maxime laboriosam eius, aut blanditiis.
-            </div>
-        </div>
-        <div class="lieu__artistes">
-            <div class="artiste__journees">
-                <div class="artiste__date">
-                        3 decembre
-                </div>
-                <div class="artiste__memeJournee">
-                    <div class="artiste">
-                        <div class="artiste__name">HeyHeyHeyHeyHey</div>
-                    </div>
-                    <div class="artiste">
-                        <div class="artiste__name">YOOULOU</div>
-                    </div>
-                    <div class="artiste">
-                        <div class="artiste__name">Blop</div>
-                    </div>
-                </div>
-            </div>
-            <div class="artiste__journee">
-                <div class="artiste__date">
-                        3 decembre
-                </div>
-                <div class="artiste__memeJournee">
-                    <div class="artiste">
-                        <div class="artiste__name">Koiujj</div>
-                    </div>
-                    <div class="artiste">
-                        <div class="artiste__name">lorednndndn</div>
-                    </div>
-                    <div class="artiste">
-                        <div class="artiste__name">Hey</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
+?>
 <?php get_footer(); //appel du template footer.php ?>

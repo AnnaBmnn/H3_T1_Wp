@@ -34,7 +34,7 @@ function ajout_custom_type_lieu() {
 	        'archive_slug'        => $post_type,
 	        'query_var'           => true,
 	        'can_export'          => true,
-	        'rewrite'             => array( 'slug' => $post_type )
+	        'rewrite'             => array( 'slug' => 'lieux' )
 	    );
 
 	    register_post_type($post_type, $args );

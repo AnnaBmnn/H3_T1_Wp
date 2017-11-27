@@ -16,13 +16,13 @@
     </head>
     <body <?php body_class(); ?>>
         <header id="header">
-            <nav class="menu">
-                <ul>
-                    <li><a href="#">Programmation</a></li>
-                    <li><a href="#">Lieux</a></li>
-                    <li><a href="#">Les indisciplinées</a></li>
-                    <li><a href="#">Infos pratique</a></li>
-                    <li><a href="#"></a>Le festival</li>
-                </ul>
-            </nav>
+            <?php // SYNTAXE : wp_nav_menu( array $args = array() )
+                $args=array(
+                    'theme_location' => 'header_menu', // nom du slug
+                    'menu' => 'header_menu', // nom à donner cette occurence du menu
+                    'container' => 'nav',
+                    'container_class' => 'menu'
+                );
+                wp_nav_menu($args);
+            ?> 
         </header>
