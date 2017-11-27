@@ -1,3 +1,4 @@
+<?php if ( !is_front_page() ) : ?>
         <footer>
             <span class="footer__title">Les indisciplinées</span>
             <div class="footer__container">
@@ -46,6 +47,7 @@
                 <span>©2017 Les indisciplinées - Tous droits réservés</span>            
             </div>
         </footer>
+<?php endif; ?>
 
         <!-- Execution de la fonction wp_footer() obligatoire ! -->
         <?php wp_footer();  ?>

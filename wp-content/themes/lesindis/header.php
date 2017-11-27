@@ -15,6 +15,7 @@
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
+        <?php if ( !is_front_page() ) : ?>
         <header id="header">
             <?php // SYNTAXE : wp_nav_menu( array $args = array() )
                 $args=array(
@@ -26,3 +27,4 @@
                 wp_nav_menu($args);
             ?> 
         </header>
+        <?php endif; ?>

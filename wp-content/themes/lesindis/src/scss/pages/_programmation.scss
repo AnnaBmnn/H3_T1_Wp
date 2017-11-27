@@ -89,8 +89,13 @@
             content: '';
         }
     }
+    &:before {
+        content: ' ';
+        padding-left: 6px;
+    }
     &:after {
         content: ' / ';
+      color: $blue;
     }
 }
 // #SECTION-DATE

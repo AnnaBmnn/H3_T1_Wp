@@ -38,12 +38,13 @@ jQuery(function ($) {
             // });
         });
 
-    // supprimer la couche une fois qu'elle a dépassée le viewport
+// supprimer la couche une fois qu'elle a dépassée le viewport
         function hasPassed (element){
             var matrix = element.css("transform");
             var translate_val = matrix.match(/-?[\d\.]+/g);
             var translateZ_val = translate_val[15];
             return translateZ_val > 1000;
         }
+
     }
 });

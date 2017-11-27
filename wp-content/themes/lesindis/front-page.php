@@ -5,15 +5,25 @@ get_header(); //appel du template header.php
         <div class="contenu-affiche">
             <div class="inner">
                 <div class="titre">
-                    <h1>Les IndisciplinéEs</h1>
-                    <h2>2-13 Nov 2017</h2>
+                    <h1><?php echo get_bloginfo( 'name' ); ?></h1>
+                    <h2><?php echo get_bloginfo( 'description' ); ?></h2>
                 </div>
+                <!-- menu statique
                 <ul class="menu-accueil">
                     <li><a href="#">Programmation</a></li>
                     <li><a href="#">Lieux</a></li>
                     <li><a href="#">Infos Pratiques</a></li>
                     <li><a href="#">Le festival</a></li>
-                </ul>
+                </ul> --
+                <?php $args=array(
+                'theme_location' => 'header_menu', // nom du slug
+                'menu' => 'header_menu', // nom à donner cette occurence du menu
+                'container' => 'nav',
+                'container_class' => 'menu'
+                );
+                wp_nav_menu($args);
+                ?>
+
             </div>
         </div>
 

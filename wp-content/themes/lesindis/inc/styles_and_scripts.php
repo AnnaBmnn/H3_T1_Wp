@@ -21,7 +21,7 @@ wp_register_style( 'font_style', 'https://fonts.googleapis.com/css?family=Istok+
 wp_enqueue_style( 'font_style' );
 
 //main css
-wp_register_style( 'main_style', CSS_URL . '/main.css' );
+wp_register_style( 'main_style', CSS_URL . '/main.css', '', '1' );
 wp_enqueue_style( 'main_style' );
 
 }
