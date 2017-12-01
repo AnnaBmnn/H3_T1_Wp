@@ -1,0 +1,269 @@
+body{ 
+	-ms-touch-action: none; 
+	touch-action: none; 
+}
+$small: 600px;
+$medium: 850px;
+.nav-lieu {
+	width: 10vw;
+	position: fixed;
+	right: 0vw;
+	top: 15vh;
+	height: 70vh;
+	@media (max-width: $small){
+		position: fixed;
+		width: 85vw;
+		margin: 2rem auto 0;   
+		height: auto;
+		top: 2vh;
+		left: 7vw;
+		right: unset;
+		z-index: 20;
+	}
+	ul {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		@media (max-width:$small){
+			flex-wrap: wrap;
+			height: auto;
+			width: 100%;
+			flex-direction: row;
+			justify-content: center;
+			margin: 30px 0;
+		}
+		li {
+			font-family: $lato;
+			font-size: 9px;
+			color: #9B9B9B;
+			text-transform: uppercase;
+			position: relative;
+			@media (max-width: $small){
+				font-size: 16px;
+				text-transform: uppercase;
+				margin-left: 10px;
+				margin-bottom: 5px;
+				&:after {
+					content: '/';
+					margin-left: 10px;
+					display: inline-block;
+				}
+			}
+		}
+		a {
+			text-decoration: none;
+			color: #9B9B9B;
+			&:before {
+				content: '';
+				position: absolute;
+				left: -20px;
+				top: 0;
+				width: 8px;
+				height: 8px;
+				border-radius: 50%;
+				background-color: #9B9B9B;
+				@media (max-width: $small){
+					display: none;
+				}
+			}
+		}
+		.active {
+			font-weight: 900;
+			color: $red;
+			@media (max-width: $small){
+				color: $blue;
+				font-weight: 900;
+			}
+			&:before {
+				background-color: $red;
+				width: 11px;
+				height: 11px;
+			}
+		}
+	}
+}
+
+.container--lieu {
+	width: 85vw;
+	margin-left: 5vw;
+	.section-lieu {
+		margin-top: 5vh;
+		min-height: 90vh;
+		margin-bottom: 0;
+	}
+	@media (max-width: $small){
+		width: 80vw;
+		margin: 0 auto;
+	}
+
+	.section__title--medium {
+		margin-bottom: 20px;
+		position: relative;
+		&:before {
+			content: '';
+			height: 240px;
+			width: 10px;
+			position: absolute;
+			left: -20px;
+			top: 10px;
+			background-color: $blue;
+		}
+		@media (max-width: $small){
+			display: none;
+		}
+	}
+}
+.lieu {
+	width: 60%;
+	display: inline-block;
+	@media (max-width: $small){
+		width: 100%;
+		margin: auto;
+		padding-top: 21vh;
+
+		margin-bottom: 40px;
+	}
+}
+.lieu__img {
+	width: 60%;
+	display: inline-block;
+	margin-left: 35px;
+	position: relative;
+	img {
+		max-width: 100%;
+		position: relative;
+	}
+	@media (max-width: $small){
+		max-width: 100%;
+		margin-left: 0px;
+		&:after {
+			display: none;
+		}
+	}
+	&:after {
+		content: '';
+		width: 100%;
+		height: 100%;
+		z-index: -20;
+		position: absolute;
+		top: 20px;
+		left: -20px;
+		background-color: $yellow;
+	}
+}
+.lieu__description {
+	width: 150%;
+	box-sizing: border-box;
+	color: $blue;
+	margin-top: 20px;
+	font-family: $lato;
+	font-size: 14px;
+	font-weight: regular;
+	line-height: 1.2;
+	@media (max-width: $small){
+		width: 100%;
+	}
+}
+.lieu__infos {
+	width: 25%;
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+	margin-left: 15px;
+	margin-top: 20px;
+	font-family: $lato;
+	font-size: 18px;
+	color: $red;
+	@media (max-width: $medium){
+		width: 100%;
+		margin-top: 40px;
+	}
+	@media (max-width: $small){
+		width: 100%;
+		margin-left: 0;
+	}
+	.lieu__infosTitre {
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	.lieu__infosLink {
+		margin-top: 10px;
+		color: $red;
+		position: relative;
+		font-size: 14px;
+		font-style: italic;
+		text-decoration: none;
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			bottom: -5px;
+			height: 2px;
+			width: 30px;
+			background-color: $red;
+		}
+	}
+	span {
+		display: block;
+	}
+}
+.lieu__artistes {
+	width: 35%;
+	display: inline-block;
+	vertical-align: top;
+	@media (max-width: $small){
+		width: 100%;
+	}
+	.artiste__picture {
+	    float: right;
+	    margin-right: 10vw;
+	    max-width: 15vw;
+	    height: auto;
+
+		img {
+	        width: 100%;
+	        height: 100%;
+	    }
+	}
+	.artiste__name {
+		cursor: pointer;
+	}
+	.artiste__journees {
+		width: 100%;
+		height: 100%;
+	}
+	.artiste__memeJournee {
+		width: 50%;
+		display: inline-block;
+		.artiste{
+			margin-bottom: 5px;
+			width: 100%;
+			font-family: $lato;
+			font-weight: bold;
+			color: $blue;
+			font-size: 18px;
+		}
+		margin-bottom: 20px;
+		@media (max-width: $small){
+			margin-bottom: 0;
+		}
+	}
+
+	.artiste__date {
+		margin-top: 5px;
+		vertical-align: top;
+		display: inline-block;
+		box-sizing: border-box;
+		width: 37%;
+		text-align: right;
+		padding-right: 20px;
+		font-family: 'lato';
+		text-transform: uppercase;
+		font-weight: black;
+		font-size: 12px;
+		@media (max-width: $small){
+			display: none;
+		}
+	}
+}

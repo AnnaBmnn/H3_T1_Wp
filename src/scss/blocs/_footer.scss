@@ -1,0 +1,142 @@
+footer {
+    width: 100vw;
+    height: 45vh;
+    margin-top: 25px;
+    background: url('../img/footer_background.png');
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    // background-size: auto 100%;
+    @include medium {
+        height: 75vh;
+        background-size: 20%;
+    }
+
+    @include small {
+        height: 100vh;
+        background-size: 50%;
+    }
+}
+
+.footer__title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+
+    @include small {
+        text-align: center;
+    }
+}
+
+.footer__container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+    @include small {
+        flex-wrap: wrap;
+    }
+}
+
+.footer__subParts {
+    width: 35%;
+    color: #002C69;
+
+    @include small {
+        width:75%;
+        margin:auto;
+    }
+}
+
+.footer__subParts--first {
+    width: 45%;
+    margin-left: 25%;
+    margin-right: 15%;
+
+    p {
+        line-height: 22px;
+    }
+
+    @include medium {
+        width: 30%;
+        margin-left: 15%;
+        margin-right: 0;
+    }
+
+    @include small {
+        width: 75%;
+        margin:auto;
+    }
+}
+
+.footer__subParts--social {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    img {
+        width: 2rem;
+
+        @include small {
+            width: 45%;
+        }
+    }
+
+    @include small {
+        flex-direction: row;
+    }
+}
+
+.footer__subtitle {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #002C69;
+}
+
+.footer__menu {
+    text-decoration: none;
+    text-transform: uppercase;    
+    list-style: none;
+    padding: 0;
+
+    @include small {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 96%;
+    }
+
+    li {
+        margin-bottom: 5px;
+    }
+
+    a {
+        text-decoration: none;
+        list-style: none;
+        color: #002C69;
+
+        @include small {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.mentions {
+    text-align: right;
+    padding-right: 15%;
+    margin-top: 25px;
+
+    @include medium {
+        padding-right: 13%;
+    }
+
+    @include small {
+        text-align: center;
+        padding: 0;
+    }
+}    

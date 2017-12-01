@@ -1,0 +1,38 @@
+
+label{
+	margin-top: 1rem;
+	font-size: 0.8rem;
+}
+
+input,
+select,
+button,
+textarea
+{
+	padding: 0.7rem 1.2rem;
+	display:inline-block;
+	vertical-align:middle;
+	white-space:normal;
+	background:none;
+	line-height:1.2;
+	box-shadow: none;
+	border: 1px solid $yellow;
+	//max-width: 100%;
+	width: 100%;
+	margin-bottom: 0.5rem;
+	
+	/* Browsers have different default form fonts */
+	font-size:1rem;
+	font-family:$brandon;
+}
+
+/* Remove the stupid outer glow in Webkit */
+input:focus,
+textarea:focus
+{
+	outline:0;
+}
+
+input[type=submit]{
+	margin-top: 1rem;
+}

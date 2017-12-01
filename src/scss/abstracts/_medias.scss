@@ -1,0 +1,52 @@
+// var breakpoints
+
+$s-small: 320px;
+$small: 414px;
+$medium: 768px;
+$large: 1240px;
+
+// media queries 
+
+@mixin s-small {
+  @media (max-width: #{$small}) {
+    @content;
+  }
+}
+
+
+@mixin small {
+  @media (min-width: 0px) and (max-width: #{$medium}) {
+    @content;  
+  }
+}
+
+@mixin medium {
+  @media (min-width: #{$medium}) and (max-width: #{$large}) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: #{$large}) {
+    @content;
+  }
+}
+
+// transition 
+
+// basics transition 
+
+
+@mixin s_transition {
+  transition: all 0.3s ease;
+}
+
+// position 
+
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @content;
+}
