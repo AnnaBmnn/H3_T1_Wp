@@ -31,9 +31,9 @@
             </div>
             <div class="mentions">
                 <div>
-                    <span><a href="">Mentions légales</a></span>
+                    <span><a href="<?php home_url(); ?>/mentions-legales">Mentions légales</a></span>
                     <span>|</span>
-                    <span><a href="">CGV</a></span>
+                    <span><a href="https://billetterie.mapl.fr/sites/billetterie.mapl.fr/files/la_billetterie/cgv/MAPL%20CGV%202017.pdf">CGV</a></span>
                 </div>
                 <span>©2017 Les indisciplinées - Tous droits réservés</span>            
             </div>

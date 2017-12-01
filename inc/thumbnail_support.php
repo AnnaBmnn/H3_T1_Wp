@@ -1,12 +1,11 @@
 <?php
-add_action( 'after_setup_theme', 'thumbnails_theme_support' );
+add_action( 'after_setup_theme', 'indis_thumbnails_theme_support' );
 
-function thumbnails_theme_support(){
-    add_theme_support( 'post-thumbnails' );
+function indis_thumbnails_theme_support(){
+    add_theme_support( 'post-thumbnails');
 }
+add_action('after_setup_theme', 'indis_create_image_size');
 
-add_action('after_setup_theme', 'create_image_size');
-
-function create_image_size(){
-	add_image_size('hub_article_thumbnail', 350, 140, true);
+function indis_create_image_size(){
+	add_image_size('artiste-carre','300','300',true);
 }

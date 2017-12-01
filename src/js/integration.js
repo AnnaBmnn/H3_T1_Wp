@@ -8,8 +8,10 @@ let pop_up = document.querySelector('.pop-up'),
 
 jQuery(document).ready(function($){
     $('.artiste__name').on('click', function(e){
+        console.log('arttt')
         //mettre le bon id sur tous les endroits où on affiche les artiste
         var artiste_id = this.dataset.artisteid;
+        console.log(artiste_id);
         var ajax_section =$("#popup"); // zone ou renvoyer le contenu de l'AJAX
             jQuery.post(
                 ajaxurl, // url du fichier admin-ajax.php,
@@ -18,6 +20,7 @@ jQuery(document).ready(function($){
                     'artiste_id': artiste_id // exemple de variable à envoyer.
                 },
                 function(response){
+                    console.log($('.pop-up'));
                     $('.pop-up').html(response);
                     $('.pop-up').toggleClass('show');
 
@@ -30,7 +33,7 @@ jQuery(document).ready(function($){
                         setTimeout(() => {
                             $('.opacity-in').toggleClass('opacity-out')
                             $('.overlay-fade').toggleClass('slide-img')
-                            $('.infos').toggleClass('slide-infos')
+                            $('.overlay-fade').toggleClass('slide-img')
                             $('.title-artist').toggleClass('slide-title')
                         }, 500)
                     }
@@ -39,7 +42,8 @@ jQuery(document).ready(function($){
         });
     if($('.pop-up').length !== 0){
         $(document).on('click',function(e) {
-            if (!$(event.target).closest('.pop-up').length || $(event.target).closest('.pop-up .close').length) { 
+            console.log('oki');
+            if (e.target != $('.pop-up') ) {
                 if ($('.pop-up').hasClass('show') && $('.opacity-in').hasClass('opacity-out')) {
 
                     $('.pop-up').toggleClass('show');

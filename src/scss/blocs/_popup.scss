@@ -3,6 +3,7 @@
 /*
 * POP-UP
 */
+
 .pop-up {
     position: fixed;
     z-index: 1000;
@@ -10,11 +11,8 @@
     top: 0;
     width: 0%;
     min-height: 100%;
-    background: $yellow;
+    background: #F5F5F8;
     transition: all 0.5s ease;
-    font-family: $lato;
-    overflow-y: scroll;
-    overflow: visible;
     .opacity-in {
         opacity: 0;
         padding-left: 100px;
@@ -22,24 +20,14 @@
         color: #122966;
         margin-top: 50px;
         .close {
-            font-family: $lato;
             position: absolute;
-            top: 10px;
-            right: -25px;
-            height: 20px;
-            width: 20px;
-            cursor: pointer;
-            img {
-                width: 100%;
-                height: 100%;
-            }
+            top: 0px;
+            right: 0px;
         }
         h2 {
             position: relative;
             display: inline-block;
             letter-spacing: 1px;
-            font-family: $brandon;
-            font-weight: bold;
             font-size: 50px;
             color: #122966;
             z-index: 10;
@@ -67,17 +55,14 @@
             }
         }
         .artist-img {
-            max-width: 45%;
             position: absolute;
             z-index: 0;
-            top: 22vh;
+            top: 18%;
             left: 10%;
             .overlay-fade {
-                z-index: 1001;
                 width: 100%;
                 height: 100%;
                 position: absolute;
-                left: 50%;
                 background: #FCFCFC;
                 transform-origin: right;
                 @include small {
@@ -96,55 +81,29 @@
                 text-align: center;
                 width: 50%;
                 margin: auto;
-                max-height: 37vh;
             }
         }
         .infos {
             position: relative;
-            left: 40%;
-            width: 50%;
+            left: 25%;
             padding-left: 5px;
-            @include small {
-                width: 90%;
-            }
-            .date {
-                color: $red;
-                font-weight: bold;
-                font-size: 20px;
-                display: inline-block;
-                padding-bottom: 5px;
-            }
+
             .sub-infos {
-                font-size: 16px;
-                padding-bottom: 15px;
                 @include small {
                     line-height: 25px;                
                 }
             }
             .shop-button {
-                z-index: 1;
-                font-family: $brandon;
-                font-weight: bold;
-                color: $red;
-                font-size: 20px;
-                position: relative;
+                border: solid 1px #122966;
+                padding: 5px 10px;
+                transition: all 0.3s ease;
+                color: #122966;
+                background: white;
                 cursor: pointer;
-                &:after {
-                    content: '';
-                    position: absolute;
-                    bottom: -2px;
-                    left: 0;
-                    height: 2px;
-                    width: 100%;
-                    background-color: $red;
-                    transform-origin: left;
-                    transform: scaleX(0.3);
-                    transition: transform 0.3s ease-in ;
-                }
+                letter-spacing: 0.5px;
                 &:hover {
-                    &:after {
-                        transform: scaleX(1); 
-                    }
+                    color: white;
+                    background: #122966;
                 }
 
                 @include small {
@@ -153,27 +112,24 @@
             }
             .description {
                 position: relative;
+                width: 450px;
+                margin-left: -5%;
                 font-size: 18px;
-                padding-right: 15px;
-                padding-top: 20px;
 
                 @include small {
-                    padding-top: 10px;
                     width: 100%;
-                    margin-top: 10px;
-                    margin-left: 0;
+                    margin: 25px 0px 25px 0px;
                 }
             }
             &:after {
                 content: '';
                 position: absolute;
                 top: 0%;
-                left: -11%;
-                width: 107%;
+                right: 55%;
+                width: 50%;
                 height: 100%;
                 background: #122966;
                 transform-origin: right;
-                z-index: 1001;
                 @include small {
                     display: none;
                 }

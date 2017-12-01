@@ -1,5 +1,5 @@
 .content-programmation {
-	background-image: url('../img/bg_progra.png');
+	background-image: url('../img/bg_progra.svg');
     background-size: 70% auto;
     background-position: -10vw 5vh;
     background-repeat: no-repeat;
@@ -17,9 +17,6 @@
 // #SECTION
 .section {
     margin-bottom: 30vh;
-    @include small {
-        margin-bottom: 15vh;
-    }
 }
 .section__sur-title {
     margin-bottom: 5vh;
@@ -35,9 +32,7 @@
     text-transform: uppercase;	
 }
 .section__title--big {
-    font-family: $brandon;
-    font-weight: black;
-    margin-top: 10vh;
+    font-family: $brandon_black;
     font-size: 140px;
     @media only screen and (max-width:800px){
         font-size: 90px;
@@ -63,8 +58,7 @@
 // }
 .section__date--big {
     text-align: right;
-    font-family: $brandon;
-    font-weight: bold;
+    font-family: $brandon_bold;
     font-size: 50px;
     color: $yellow;
     letter-spacing: -2px;
@@ -86,9 +80,7 @@
     font-size: 32px;
     transition: all 0.6s cubic-bezier(0,0,.25,1);
     cursor: pointer;
-    @include small {
-        font-size: 22px;
-    }
+
     &:hover {
         color: $yellow;
     }
@@ -97,32 +89,18 @@
             content: '';
         }
     }
-    &:before {
-        content: ' ';
-        padding-left: 6px;
-    }
     &:after {
         content: ' / ';
-      color: $blue;
     }
 }
 // #SECTION-DATE
-
-.section-date {
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: 50% 10vh;
-    margin-bottom: 0;
-    padding-bottom: 30vh;
-}
-
 .section-date__partie {
     width: $container*0.5;
     @include medium {
         width: 50vw;
     }
-    @media (max-width: 700px){
-        width: 100%;
+    @media (max-width: 1250px){
+        width: 40vw;
     }
 }
 .section-date__partie--left {
@@ -145,14 +123,11 @@
 .section-date__partie--right {
     float: right;
     text-align: left;
-    clear: both;
-    @include s-small {
-        float: none;
-        clear: both;
-
-    }
+    // @include small {
+    //     float: none;
+    // }
 	.artiste__date {
-        left: -10%;
+        left: -15%;
         // @include small {
         //     left: unset;
         //     right: 0;
@@ -187,19 +162,10 @@
 // //artiste
 .section-date__partie--right{
     position: relative;
+
     .artiste {
         margin-bottom: 5vh;
         cursor: pointer;
-        
-        &:first-child{
-	        .artiste__picture {
-                opacity: 1;
-            }
-            
-            .artiste__date{
-	            display: block;
-            }
-        }
 
         &:hover {
             .artiste__name {
@@ -211,7 +177,7 @@
                 }
             }
             .artiste__picture {
-                opacity: 1;
+                display: block;
             }
         }
         .artiste__name {
@@ -248,22 +214,15 @@
         font-size: 12px;
         position: absolute;
         top: 5px;
-        display: none;
-        @include small {
-            display: none;
-        }
     }
     .artiste__picture {
         position: absolute;
         top: 0;
-        left: -35vw;
+        left: -40vw;
         max-width: 30vw;
         height: auto;
-        opacity: 0;
-        transition: opacity 0.3s ease-in;
-        @include small {
-            display: none;
-        }
+        display: none;
+
     	img {
             width: 100%;
             height: 100%;
@@ -279,36 +238,20 @@
     @include medium {
         width: 100%;
     }
-    @include small {
-        width: 85vw;
-    }
 }
 .agenda ul {
     display: flex;
     flex-direction: row;
     flex-wrap: no-wrap;
     justify-content: space-between;
-    @include small {
-        flex-wrap: wrap;
-        justify-content: flex-start;
-    }
 }
 .agenda__day {
-    margin-top: 15px;
-    margin-right: 20px;
     font-family: $sf;
     font-size: 22px;
-    cursor: pointer; 
-    transition: color 0.3s ease-in;
-    &:hover {
-        color: $blue;
-    }   
+    cursor: pointer;    
 }
 .agenda__day--active {
-    color: $yellow;  
+    color: $blue;  
     font-weight: 900; 
-    &:hover {
-        color: $yellow;
-    }
 }    
-
+// #SECTION_LIEU

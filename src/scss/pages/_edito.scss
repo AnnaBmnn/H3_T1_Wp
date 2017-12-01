@@ -1,11 +1,7 @@
 .edito {
     position: relative;
 	width: 100vw;
-    height: 130vh;
-    @include small {
-        height: 70vh;
-        overflow: hidden;
-    }
+    height: 100vh;
 }
 
 .edito__description {
@@ -44,7 +40,7 @@
     position: absolute;
     left: 20%;
     top: 140px;
-    width: 40%;
+    width: 20%;
     height:auto;
     letter-spacing: 1px;
     line-height:25px;
@@ -70,27 +66,17 @@
     }
 
     @include medium {
-        width: 30%;
+        width: 24%;
         left: 10%;
     }
 }
 
 .edito__background {
     position: absolute;
-    right: 15%;
+    right: 20%;
     z-index: 1;
-    width: 40vw;
-    @include large {
-        width: 40vw;
-        right: 15%;
-    }
-    @include medium {
-        width: 50vw;
-        right: 10%;
-    }
+
     img {
-        height: auto;
-        width: 100%;
         @include small {
             width: 100%;
         }

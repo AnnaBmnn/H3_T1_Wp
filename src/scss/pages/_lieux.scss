@@ -1,23 +1,16 @@
-body{ 
-	-ms-touch-action: none; 
-	touch-action: none; 
-}
-$small: 600px;
-$medium: 850px;
 .nav-lieu {
 	width: 10vw;
 	position: fixed;
 	right: 0vw;
 	top: 15vh;
 	height: 70vh;
-	@media (max-width: $small){
+	@media (max-width: 850px){
 		position: fixed;
 		width: 85vw;
-		margin: 2rem auto 0;   
+		margin: 0 auto;
 		height: auto;
 		top: 2vh;
-		left: 7vw;
-		right: unset;
+		left: unset;
 		z-index: 20;
 	}
 	ul {
@@ -25,7 +18,7 @@ $medium: 850px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-evenly;
-		@media (max-width:$small){
+		@media (max-width: 850px){
 			flex-wrap: wrap;
 			height: auto;
 			width: 100%;
@@ -39,7 +32,7 @@ $medium: 850px;
 			color: #9B9B9B;
 			text-transform: uppercase;
 			position: relative;
-			@media (max-width: $small){
+			@media (max-width: 850px){
 				font-size: 16px;
 				text-transform: uppercase;
 				margin-left: 10px;
@@ -63,7 +56,7 @@ $medium: 850px;
 				height: 8px;
 				border-radius: 50%;
 				background-color: #9B9B9B;
-				@media (max-width: $small){
+				@media (max-width: 850px){
 					display: none;
 				}
 			}
@@ -71,7 +64,7 @@ $medium: 850px;
 		.active {
 			font-weight: 900;
 			color: $red;
-			@media (max-width: $small){
+			@media (max-width: 850px){
 				color: $blue;
 				font-weight: 900;
 			}
@@ -92,7 +85,7 @@ $medium: 850px;
 		min-height: 90vh;
 		margin-bottom: 0;
 	}
-	@media (max-width: $small){
+	@media (max-width: 850px){
 		width: 80vw;
 		margin: 0 auto;
 	}
@@ -109,7 +102,7 @@ $medium: 850px;
 			top: 10px;
 			background-color: $blue;
 		}
-		@media (max-width: $small){
+		@media (max-width: 850px){
 			display: none;
 		}
 	}
@@ -117,11 +110,9 @@ $medium: 850px;
 .lieu {
 	width: 60%;
 	display: inline-block;
-	@media (max-width: $small){
+	@media (max-width: 850px){
 		width: 100%;
 		margin: auto;
-		padding-top: 21vh;
-
 		margin-bottom: 40px;
 	}
 }
@@ -131,15 +122,12 @@ $medium: 850px;
 	margin-left: 35px;
 	position: relative;
 	img {
-		max-width: 100%;
+		width: 100%;
 		position: relative;
 	}
-	@media (max-width: $small){
-		max-width: 100%;
-		margin-left: 0px;
-		&:after {
-			display: none;
-		}
+	@media (max-width: 850px){
+		width: 55%;
+		margin-left: 20px;
 	}
 	&:after {
 		content: '';
@@ -153,35 +141,30 @@ $medium: 850px;
 	}
 }
 .lieu__description {
-	width: 150%;
+	width: 70%;
 	box-sizing: border-box;
-	color: $blue;
-	margin-top: 20px;
+	margin-left: 80px;
+	margin-top: 10px;
 	font-family: $lato;
 	font-size: 14px;
 	font-weight: regular;
 	line-height: 1.2;
-	@media (max-width: $small){
-		width: 100%;
+	@media (max-width: 850px){
+		display: none;
 	}
 }
 .lieu__infos {
-	width: 25%;
+	width: 35%;
 	display: inline-block;
 	position: relative;
 	vertical-align: top;
-	margin-left: 15px;
+	margin-left: -15px;
 	margin-top: 20px;
 	font-family: $lato;
 	font-size: 18px;
 	color: $red;
-	@media (max-width: $medium){
-		width: 100%;
-		margin-top: 40px;
-	}
-	@media (max-width: $small){
-		width: 100%;
-		margin-left: 0;
+	@media (max-width: 850px){
+		width: 35%;
 	}
 	.lieu__infosTitre {
 		font-weight: bold;
@@ -212,7 +195,7 @@ $medium: 850px;
 	width: 35%;
 	display: inline-block;
 	vertical-align: top;
-	@media (max-width: $small){
+	@media (max-width: 850px){
 		width: 100%;
 	}
 	.artiste__picture {
@@ -225,9 +208,6 @@ $medium: 850px;
 	        width: 100%;
 	        height: 100%;
 	    }
-	}
-	.artiste__name {
-		cursor: pointer;
 	}
 	.artiste__journees {
 		width: 100%;
@@ -245,11 +225,7 @@ $medium: 850px;
 			font-size: 18px;
 		}
 		margin-bottom: 20px;
-		@media (max-width: $small){
-			margin-bottom: 0;
-		}
 	}
-
 	.artiste__date {
 		margin-top: 5px;
 		vertical-align: top;
@@ -262,8 +238,8 @@ $medium: 850px;
 		text-transform: uppercase;
 		font-weight: black;
 		font-size: 12px;
-		@media (max-width: $small){
-			display: none;
+		@media (max-width: 850px){
+			width: 30%;
 		}
 	}
 }

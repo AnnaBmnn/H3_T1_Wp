@@ -1,17 +1,10 @@
 <?php
 
-function ajout_scripts() {
+function indis_ajout_scripts() {
 
 //main js
-wp_register_script('main_script', JS_URL . '/main.js', array('jquery'),'1.1', true);
+wp_register_script('main_script', JS_URL . '/main.min.js', array('jquery'),'1.1', true);
 wp_enqueue_script('main_script');
-
-wp_register_script('integration_script', JS_URL . '/integration.js', array('jquery'),'1.1', true);
-wp_enqueue_script('integration_script');
-
-
-wp_register_script('homeScroll_script', JS_URL . '/homeScroll.js', array('jquery'),'1.1', true);
-wp_enqueue_script('homeScroll_script');
 
 // pass Ajax Url to script.js
 wp_localize_script('main_script', 'ajaxurl', admin_url( 'admin-ajax.php' ) );
@@ -26,5 +19,5 @@ wp_enqueue_style( 'main_style' );
 
 }
 
-add_action( 'wp_enqueue_scripts', 'ajout_scripts' );
+add_action( 'wp_enqueue_scripts', 'indis_ajout_scripts' );
 

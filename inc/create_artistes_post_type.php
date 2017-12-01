@@ -1,5 +1,5 @@
 <?php
-function ajout_custom_type_artiste() {
+function indis_ajout_custom_type_artiste() {
 
 	$post_type = "artiste";
 	$labels = array(
@@ -48,4 +48,4 @@ function ajout_custom_type_artiste() {
 
 }
 
-add_action('init', 'ajout_custom_type_artiste');
+add_action('init', 'indis_ajout_custom_type_artiste');

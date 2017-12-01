@@ -1,3 +1,4 @@
+
 footer {
     width: 100vw;
     height: 45vh;
@@ -6,15 +7,6 @@ footer {
     background-position: left bottom;
     background-repeat: no-repeat;
     // background-size: auto 100%;
-    @include medium {
-        height: 75vh;
-        background-size: 20%;
-    }
-
-    @include small {
-        height: 100vh;
-        background-size: 50%;
-    }
 }
 
 .footer__title {
@@ -24,10 +16,6 @@ footer {
     font-size: 24px;
     text-transform: uppercase;
     margin-bottom: 50px;
-
-    @include small {
-        text-align: center;
-    }
 }
 
 .footer__container {
@@ -36,20 +24,11 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 15px;
-
-    @include small {
-        flex-wrap: wrap;
-    }
 }
 
 .footer__subParts {
     width: 35%;
     color: #002C69;
-
-    @include small {
-        width:75%;
-        margin:auto;
-    }
 }
 
 .footer__subParts--first {
@@ -60,17 +39,6 @@ footer {
     p {
         line-height: 22px;
     }
-
-    @include medium {
-        width: 30%;
-        margin-left: 15%;
-        margin-right: 0;
-    }
-
-    @include small {
-        width: 75%;
-        margin:auto;
-    }
 }
 
 .footer__subParts--social {
@@ -79,15 +47,7 @@ footer {
     justify-content: space-around;
 
     img {
-        width: 2rem;
-
-        @include small {
-            width: 45%;
-        }
-    }
-
-    @include small {
-        flex-direction: row;
+        width: 15%;
     }
 }
 
@@ -103,14 +63,6 @@ footer {
     list-style: none;
     padding: 0;
 
-    @include small {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        width: 96%;
-    }
-
     li {
         margin-bottom: 5px;
     }
@@ -119,10 +71,6 @@ footer {
         text-decoration: none;
         list-style: none;
         color: #002C69;
-
-        @include small {
-            margin-bottom: 15px;
-        }
     }
 }
 
@@ -130,13 +78,4 @@ footer {
     text-align: right;
     padding-right: 15%;
     margin-top: 25px;
-
-    @include medium {
-        padding-right: 13%;
-    }
-
-    @include small {
-        text-align: center;
-        padding: 0;
-    }
-}    
+}

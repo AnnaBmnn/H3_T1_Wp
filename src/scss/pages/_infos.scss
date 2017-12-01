@@ -1,4 +1,10 @@
-  
+
+body {
+	margin: 0;
+    padding: 0;
+    width: 100vw; 
+}
+
 .background__bird {
     position: absolute;
     z-index: -10;
@@ -157,33 +163,4 @@
     img {
         width: 70%;
     }
-}
-
-div.cspm_infobox_content_container.cspm_type1 div.cspm_infobox_content div.title {
-    padding-bottom: 5px;
-    width: auto;
-    font-size: 1rem;
-    font-family: Brandon Grotesque;
-    letter-spacing: 0;
-    text-align: left;
-    margin: 0;
-    //margin: 0 0 1rem 0;
-}
-div.cspm_infobox_content_container.cspm_type1 div.cspm_infobox_content div.description{
-	text-align: left;
-	display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-	
-	p{
-		white-space: normal; 
-		
-	}
-	
-	a{
-		margin-top: auto;
-		font-family: $brandon;
-		font-weight: bold;
-	}
 }

@@ -34,16 +34,21 @@ get_header(); //appel du template header.php
                 <h3 class="practical__subtitle"><?php  echo $contact['titre_contact']; ?></h3>
                 <!--  METTRE LES RESEAUX SOCIAUX  -->
                 <div class="social__media">
-                    <?php
-                        //var_dump($contact['reseaux_sociaux']);
-                        foreach ($contact['reseaux_sociaux'] as $img) {
-                            echo '<div>';
-                                echo '<img src="'. $img["reseaux"]  .'" alt="">';
-                            echo '</div>';
-                           
-                        }
-
-                    ?>                   
+                    <?php if(get_field('facebook', 'options')) : ?>
+                    <div>
+                        <a href="<?php echo get_field('facebook', 'options'); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/facebook.png" alt=""></a>
+                    </div>
+                    <?php endif; ?>
+                    <?php if(get_field('twitter', 'options')) : ?>
+                    <div>
+                        <a href="<?php echo get_field('twitter', 'options'); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/twitter.png" alt=""> </a>               
+                    </div>
+                    <?php endif; ?>
+                    <?php if(get_field('instagram', 'options')) : ?>
+                    <div>
+                        <a href="<?php echo get_field('instagram', 'options'); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/instagram.png" alt=""></a>
+                    </div>
+                    <?php endif; ?>                 
                 </div>
                 <?php  echo $contact['contenu_contact']; ?>  
             </div>

@@ -1,10 +1,10 @@
 <?php
-function ajout_custom_type_lieu() {
+function indis_ajout_custom_type_lieu() {
 
 	$post_type = "lieu";
 	$labels = array(
-	        'name'               => 'lieu',
-	        'singular_name'      => 'lieu',
+	        'name'               => 'Lieu',
+	        'singular_name'      => 'Lieu',
 	        'all_items'          => 'Tous les lieux',
 	        'add_new'            => 'Ajouter un lieu',
 	        'add_new_item'       => 'Ajouter un nouveau lieu',
@@ -15,7 +15,7 @@ function ajout_custom_type_lieu() {
 	        'not_found'          => 'No result',
 	        'not_found_in_trash' => 'No result',
 	        'parent_item_colon'  => 'lieu parent ::',
-	        'menu_name'          => 'lieux',
+	        'menu_name'          => 'Lieux',
 	    );
 
 	    $args = array(
@@ -41,4 +41,4 @@ function ajout_custom_type_lieu() {
 
 }
 
-add_action('init', 'ajout_custom_type_lieu');
+add_action('init', 'indis_ajout_custom_type_lieu');
